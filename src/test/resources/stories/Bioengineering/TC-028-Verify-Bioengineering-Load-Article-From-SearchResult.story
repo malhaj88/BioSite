@@ -9,4 +9,3 @@ And I Fill Clinical to : bio_Search_field
 And I click on bio_Search_Icon
 And I click on bio_Article_From_Search
 Then The bio_Article_Topic should display
-And The bio_Topic_Header should display
