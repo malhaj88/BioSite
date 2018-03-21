@@ -643,6 +643,7 @@ public class ScitationPage extends FluentWebDriverPage {
 		String Message = findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(Actual))).getText();
 		System.out.println(Message + "---------" + expected);
 		Assert.assertTrue(Message.toLowerCase().contains(expected.toLowerCase()));
+		Assert.assertTrue(Message.toLowerCase().contains(expected.toLowerCase()));
 	}
 
 	public void SwitchToIframe(String IframeSelector) throws IOException {
@@ -1003,5 +1004,14 @@ public class ScitationPage extends FluentWebDriverPage {
 //			Assert.assertTrue(Message.toLowerCase().contains(elem.get(i).getText().toLowerCase()));
 
 		}
+	}
+	
+	public void assertNotResult(String Actual, String expected) throws IOException {
+
+		waitPresenceOfElement(Actual);
+		String Message = findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(Actual))).getText();
+		System.out.println(Message + "---------" + expected);
+		Assert.assertFalse(Message.toLowerCase().contains(expected.toLowerCase()));
+		
 	}
 }

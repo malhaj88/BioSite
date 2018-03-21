@@ -49,6 +49,13 @@ public class SitationSteps extends BaseSteps {
 	public void Assert(@Named("Actual") String Actual, @Named("Expected") String Expected) throws IOException {
 		getScitationPage().assertResult(Actual, Expected);
 	}
+	
+	@Given("The $Actual should not be $Expected")
+	@When("The $Actual should not be $Expected")
+	@Then("The $Actual should not be $Expected")
+	public void AssertNot(@Named("Actual") String Actual, @Named("Expected") String Expected) throws IOException {
+		getScitationPage().assertNotResult(Actual, Expected);
+	}
 
 	@When("page URL should be $Page_URL")
 	@Then("page URL should be $Page_URL")

@@ -1,4 +1,5 @@
-
+Meta:
+@production
 Scenario: TC-006 Verify clicking on Social media icons Twitter Bio.
  
 Given I am On bioengineerinPage
