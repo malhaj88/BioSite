@@ -1,6 +1,6 @@
 Meta:
 @production
-Scenario: TC-038 Verify Featured Articles
+Scenario: TC-039 Verify Featured Section
 
 Given I am On bioengineerinPage
 When The bio_Featured_Articles should display
