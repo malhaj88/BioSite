@@ -987,23 +987,23 @@ public class ScitationPage extends FluentWebDriverPage {
 
 	@SuppressWarnings("deprecation")
 	public void clickAllElement(String List, String element) throws IOException, InterruptedException {
-		waitPresenceOfElement(element);
-		List<WebElement> elem = findElements(By.cssSelector(EnvirommentManager.getInstance().getProperty(element)));
-		for (int i = 0; i < elem.size(); i++) {
-			elem.get(i).click();
-
-			Thread.sleep(10000);
-			waitPresenceOfElement(element);
-			FirefoxDriver driver = new FirefoxDriver();
-			
-			driver.findElement(By.cssSelector(".easy-breadcrumb_segment-title")).getText();
+//		waitPresenceOfElement(element);
+//		List<WebElement> elem = findElements(By.cssSelector(EnvirommentManager.getInstance().getProperty(element)));
+//		for (int i = 0; i < elem.size(); i++) {
+//			elem.get(i).click();
+//
+//			Thread.sleep(10000);
+//			waitPresenceOfElement(element);
+//			FirefoxDriver driver = new FirefoxDriver();
+//			
+//			driver.findElement(By.cssSelector(".easy-breadcrumb_segment-title")).getText();
 //			findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(List))).isDisplayed();
 //			Thread.sleep(10000);
 //			String Message = findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(List))).getText();
 //			System.out.println(Message + " ---" + "--- " + elem.get(i).getText().toLowerCase());
 //			Assert.assertTrue(Message.toLowerCase().contains(elem.get(i).getText().toLowerCase()));
-
-		}
+//
+//		}
 	}
 	
 	public void assertNotResult(String Actual, String expected) throws IOException {
