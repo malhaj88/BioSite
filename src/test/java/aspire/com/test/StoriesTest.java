@@ -156,9 +156,9 @@ public class StoriesTest extends JUnitStories {
 
 		// Screenshot property
 		AspireReport.getInstance().getReportDataManager().setPreScreenshotEnabled(true);
-		AspireReport.getInstance().getReportDataManager().setFailedScreenshotEnabled(false);
+		AspireReport.getInstance().getReportDataManager().setFailedScreenshotEnabled(true);
 		AspireReport.getInstance().getReportDataManager().setPostScreenshotEnabled(true);
-		AspireReport.getInstance().getReportDataManager().setDeleteScreenshotsForPassedScenarios(false);
+		AspireReport.getInstance().getReportDataManager().setDeleteScreenshotsForPassedScenarios(true);
 		// Report Information to be added
 		AspireReport.getInstance().getReportDataManager().setBuildNumber("apple");
 		AspireReport.getInstance().getReportDataManager().setPlatformName("Windows");
