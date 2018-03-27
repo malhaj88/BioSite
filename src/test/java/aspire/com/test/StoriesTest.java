@@ -97,7 +97,7 @@ public class StoriesTest extends JUnitStories {
 	@Override
 	protected List<String> storyPaths() {
 		return new StoryFinder().findPaths(codeLocationFromClass(this.getClass()).getFile(),
-				asList("**/" + System.getProperty("storyFilter", "*") + ".story"),
+				asList("**/" + System.getProperty("storyFilter", "TC-005-Verify-clicking-on-Social-media-icons-facebook") + ".story"),
 				//asList("**/" + System.getProperty("storyFilter", "TC-021-ClickOnFooterElements-FaceBook") + ".story"),
 				null);
 
@@ -155,9 +155,9 @@ public class StoriesTest extends JUnitStories {
 		checkThreadsValue();
 
 		// Screenshot property
-		AspireReport.getInstance().getReportDataManager().setPreScreenshotEnabled(false);
-		AspireReport.getInstance().getReportDataManager().setFailedScreenshotEnabled(true);
-		AspireReport.getInstance().getReportDataManager().setPostScreenshotEnabled(false);
+		AspireReport.getInstance().getReportDataManager().setPreScreenshotEnabled(true);
+		AspireReport.getInstance().getReportDataManager().setFailedScreenshotEnabled(false);
+		AspireReport.getInstance().getReportDataManager().setPostScreenshotEnabled(true);
 		AspireReport.getInstance().getReportDataManager().setDeleteScreenshotsForPassedScenarios(false);
 		// Report Information to be added
 		AspireReport.getInstance().getReportDataManager().setBuildNumber("apple");
