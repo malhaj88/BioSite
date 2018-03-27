@@ -155,9 +155,9 @@ public class StoriesTest extends JUnitStories {
 		checkThreadsValue();
 
 		// Screenshot property
-		AspireReport.getInstance().getReportDataManager().setPreScreenshotEnabled(true);
+		AspireReport.getInstance().getReportDataManager().setPreScreenshotEnabled(false);
 		AspireReport.getInstance().getReportDataManager().setFailedScreenshotEnabled(true);
-		AspireReport.getInstance().getReportDataManager().setPostScreenshotEnabled(true);
+		AspireReport.getInstance().getReportDataManager().setPostScreenshotEnabled(false);
 		AspireReport.getInstance().getReportDataManager().setDeleteScreenshotsForPassedScenarios(false);
 		// Report Information to be added
 		AspireReport.getInstance().getReportDataManager().setBuildNumber("apple");
