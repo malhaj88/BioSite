@@ -364,11 +364,6 @@ public class SitationSteps extends BaseSteps {
 	public void assertVolume(@Named("volume") String volume) throws IOException {
 		getScitationPage().assertVolume(volume);
 	}
-	
-	@When("click All $List Element on $element")
-	@Then("click All $List Element on $element")
-	public void clickAllElement(@Named("List") String list,@Named("element") String element) throws IOException, InterruptedException {
-		getScitationPage().clickAllElement(list,element);
-	}
+
 
 }
