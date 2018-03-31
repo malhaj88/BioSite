@@ -97,9 +97,7 @@ public class StoriesTest extends JUnitStories {
 	@Override
 	protected List<String> storyPaths() {
 		return new StoryFinder().findPaths(codeLocationFromClass(this.getClass()).getFile(),
-				asList("**/" + System.getProperty("storyFilter", "*") + ".story"),
-				//asList("**/" + System.getProperty("storyFilter", "TC-021-ClickOnFooterElements-FaceBook") + ".story"),
-				null);
+				asList("**/" + System.getProperty("storyFilter", "*") + ".story"), null);
 
 	}
 
@@ -114,7 +112,7 @@ public class StoriesTest extends JUnitStories {
 
 	public void startStories(Embedder embedder, Boolean runFailed) {
 		try {
-
+			
 			if (runFailed) {
 				embedder.runStoriesAsPaths(
 						failedStoryPaths(AspireReport.getInstance().getReportDataManager().getFailedStories()));
@@ -145,28 +143,28 @@ public class StoriesTest extends JUnitStories {
 	@Override
 	public void run() throws Throwable {
 
-		// ******* Don't Erase this line used to initialize environment manager
-		// class ***** //
+		
+		
+		// ******* Don't Erase this line used to initialize environment manager class    ***** //
 		jo.aspire.automation.logger.EnvirommentManager.setInitialClass(this.getClass());
 
-		// Method used to Set Threading to true or false based on Threads
-		// properties value
-
+		// Method used to Set Threading to true or false based on Threads properties value
+		
 		checkThreadsValue();
 
-		// Screenshot property
+		// Screenshot property 
 		AspireReport.getInstance().getReportDataManager().setPreScreenshotEnabled(true);
 		AspireReport.getInstance().getReportDataManager().setFailedScreenshotEnabled(true);
 		AspireReport.getInstance().getReportDataManager().setPostScreenshotEnabled(true);
 		AspireReport.getInstance().getReportDataManager().setDeleteScreenshotsForPassedScenarios(true);
-		// Report Information to be added
-		AspireReport.getInstance().getReportDataManager().setBuildNumber("apple");
+		//Report Information to be added 
+        AspireReport.getInstance().getReportDataManager().setBuildNumber("apple");
 		AspireReport.getInstance().getReportDataManager().setPlatformName("Windows");
 		AspireReport.getInstance().getReportDataManager().setPlatformVersion("7");
-
-		// ***********************************************************************
-		// //
-
+		
+		// *********************************************************************** //
+		
+		
 		drivers = convertFileToJSON(this.getClass().getResource("/configs/drivers.json").getPath()).getAsJsonArray();
 		int executableBrowsers = 0;
 		for (JsonElement dr : drivers) {
@@ -235,15 +233,14 @@ public class StoriesTest extends JUnitStories {
 				String browser = currentDriver.get("name").getAsString().toLowerCase();
 				// if (!isRemote) { // if local not remote
 				Embedder embedder = getEmbedder();
-				embedder.embedderControls().useStoryTimeoutInSecs(450);
-				embedder.embedderControls().useStoryTimeoutInSecs(900);
+				embedder.embedderControls().useStoryTimeoutInSecs(3000);
 				AspireReport.getInstance().getReportDataManager().addToReportPath(buildName);
-				File ReportDir = new File(AspireReport.getInstance().getReportDataManager().getReportPath());
+				File ReportDir =new File(AspireReport.getInstance().getReportDataManager().getReportPath());
 				ReportDir.mkdirs();
 				embedder.systemProperties().setProperty("browser", browser);
 				ReportName = "Automation_Report_BuildNumber-" + browser + buildName + "_" + dateAndTime + ".html";
 				AspireReport.getInstance().getReportDataManager().setReportFileName(ReportName);
-
+				
 				startStories(embedder, false);
 				if (rerunFailed) {
 					rerunFailedStories(rerunCount);
@@ -386,12 +383,12 @@ public class StoriesTest extends JUnitStories {
 				System.exit(0);
 			}
 		}
-
-		else {
-
+		
+		else{
+			
 			AspireLog4j.setLoggerMessageLevel("Threads value can't be null - run terminated ", Log4jLevels.ERROR);
-			System.exit(0);
-
+			System.exit(0);		
+			
 		}
 
 	}
