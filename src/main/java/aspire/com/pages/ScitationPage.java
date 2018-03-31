@@ -74,7 +74,7 @@ public class ScitationPage extends FluentWebDriverPage {
 	public void GoFor(String ContentURLVariable) throws IOException {
 		String URL = EnvirommentManager.getInstance().getProperty(ContentURLVariable);
 		get(URL);
-		getDriverProvider().get().manage().window().setSize(new Dimension(1552, 840));
+		//getDriverProvider().get().manage().window().setSize(new Dimension(1552, 840));
 
 	}
 
@@ -325,10 +325,13 @@ public class ScitationPage extends FluentWebDriverPage {
 
 	public void clickOnElementUsingJS(String element) throws IOException {
 		WebDriver driver = getDriverProvider().get();
-		//element = EnvirommentManager.getInstance().getProperty(element);
-		//JavascriptExecutor executor = (JavascriptExecutor) driver;
-		//executor.executeScript("$('" + element + "').click();");
-		
+		try {
+			WaitDOMToBeReady();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		waitPresenceOfElement(element);
 		WebElement element1 = findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element)));
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element1).click().build().perform();

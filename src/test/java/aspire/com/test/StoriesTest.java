@@ -97,7 +97,7 @@ public class StoriesTest extends JUnitStories {
 	@Override
 	protected List<String> storyPaths() {
 		return new StoryFinder().findPaths(codeLocationFromClass(this.getClass()).getFile(),
-				asList("**/" + System.getProperty("storyFilter", "*") + ".story"), null);
+				asList("**/" + System.getProperty("storyFilter", "TC-023-Verify-Bioengineering-More-Link-In-Jobs-section-on-right-panel") + ".story"), null);
 
 	}
 
