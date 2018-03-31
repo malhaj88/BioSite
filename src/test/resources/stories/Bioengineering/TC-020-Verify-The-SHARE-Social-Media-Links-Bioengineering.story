@@ -3,7 +3,7 @@ Meta:
 Scenario: TC-020 Verify the "SHARE" Social Media Links under the article image.
 
 Given I am On bioengineerinPage
-When I click on bio_Article
+When I Click On bio_Article
 Then The bio_Share_Face should display
 And The bio_Share_Twitter should display
 And The bio_Share_Reddit should display

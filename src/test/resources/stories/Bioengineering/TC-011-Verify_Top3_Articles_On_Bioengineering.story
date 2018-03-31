@@ -14,4 +14,4 @@ And The bio_Article2_Title should display
 And The bio_Top_Article3 should display
 And The bio_Article3_Abstract should display
 And The bio_Article3_Date should display
-And The bio_Article3_Title should display
+Then The bio_Article3_Title should display

@@ -3,8 +3,8 @@ Meta:
 Scenario: TC-017 Verify the Related Articles section (on right panel below the latest articles section).
 
 Given I am On bioengineerinPage
-When I click on bio_Article
+When I Click On bio_Article
 And The bio_Related_Articles_Section should display
-Then I click on bio_Related_Articles_Article
+And I Click On bio_Related_Articles_Article
 And The bio_Article_Title should display
-And The bio_Logo should display
+Then The bio_Logo should display
