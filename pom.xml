@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>aspire.automation</groupId>
-	<artifactId>SciCheck-automation</artifactId>
+	<artifactId>PXP-automation</artifactId>
 	<version>1.0</version>
-	<name>Aspire Automation Testers build using Java with Spring, Selenium and jBehvae</name>
-	<description>Aspire Automation Testers build using Java with Spring, Selenium and jBehvae</description>
+	<name>PXP Automation Testers build using Java with Spring, Selenium and jBehvae</name>
+	<description>PXP Automation Testers build using Java with Spring, Selenium and jBehvae</description>
 
 
 	<properties>
@@ -14,8 +14,8 @@
 		<springframework.version>4.2.3.RELEASE</springframework.version>
 		<org.seleniumhq.selenium.fluent.version>1.16</org.seleniumhq.selenium.fluent.version>
 		<cucumber.version>1.2.4</cucumber.version>
-		<automation.util.version>v2.2.15-DEV</automation.util.version>
-		<asreport.version>v1.0.65-DEV</asreport.version>
+		<automation.util.version>4.1.2</automation.util.version>
+        <asreport.version>1.2.3</asreport.version>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
 	</properties>

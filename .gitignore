@@ -1,9 +1,10 @@
-*.png
-target/test-classes/stories/Search/TC-031-Search-SearchResultsPage.story
-target/test-classes/configs/Variables.properties
-target/classes/aspire/com/steps/Steps2.class
-*.html
-*.stats
-/target/
-reports/XYZ_Mon,14_Aug_2017_10_49_41/High_Level_Results.txt
-reports/XYZ/High_Level_Results.txt
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+src/reports/generated
+reports/
+src/test/resources/stories/25- Notes/TC-012-VerifyWithdrawManuscript.story
+src/test/resources/stories/25- Notes/TC-013-VerifyAddPotentialReviewer-Note-Button.story

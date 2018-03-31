@@ -1,18 +1,12 @@
 package aspire.com.steps;
 
 import org.jbehave.core.annotations.AfterScenario;
-import org.jbehave.core.annotations.AfterScenario.Outcome;
 import org.jbehave.core.annotations.AfterStories;
 import org.jbehave.core.annotations.AfterStory;
 import org.jbehave.core.annotations.BeforeScenario;
 import org.jbehave.core.annotations.BeforeStories;
 import org.jbehave.core.annotations.BeforeStory;
-import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.ScenarioType;
-import org.jbehave.core.parsers.StoryTransformer;
-import org.jbehave.web.selenium.WebDriverProvider;
-import org.junit.After;
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriverException;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -21,12 +15,15 @@ import com.aspire.automationReport.StoriesStatusCounter;
 
 import aspire.com.pages.PageFactory;
 import cucumber.api.java.Before;
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
 import jo.aspire.automation.logger.EnvirommentManager;
 import jo.aspire.generic.GenericHelper;
 import jo.aspire.generic.StateHelper;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
 
 public class LifecycleSteps {
 	@Autowired
@@ -85,12 +82,10 @@ public class LifecycleSteps {
 	public void runAfterStories() throws IOException {
 
 		StateHelper.clearStoryState();
-		try {
+		
 			AspireReport.getInstance().printEveryThing();
-			//AspireReport.getInstance().getReportDataManager().openReport();
-		} catch (WebDriverException e) {
-			e.printStackTrace();
-		}
+			AspireReport.getInstance().allowWriteOnDatabase();
+	
 
 		StoriesStatusCounter storiesStatusCounter = AspireReport.getInstance().getReportDataManager().getTestCounters();
 		int passedTestCount = storiesStatusCounter.getPassed();
@@ -105,9 +100,9 @@ public class LifecycleSteps {
 		writer.println("tc_skipped = " + skippedTestCount);
 		writer.close();
 
-		if (EnvirommentManager.getInstance().getProperty("sendEmailWithAttachments").equals("true")) {
-			GenericHelper.sendEmailWithAttachments(null);
-		}
+//		if (EnvirommentManager.getInstance().getProperty("sendEmailWithAttachments").equals("true")) {
+//			GenericHelper.sendEmailWithAttachments(null);
+//		}
 	}
 
 	@AfterScenario(uponType = ScenarioType.EXAMPLE)
