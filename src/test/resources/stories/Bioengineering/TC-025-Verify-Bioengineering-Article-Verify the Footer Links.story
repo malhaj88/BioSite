@@ -10,4 +10,4 @@ And The bio_Face_Img should display
 And The bio_Twitter_Img should display
 And The bio_Linkedin_Img should display
 And The bio_Rss_Img should display
-And The bio_Email_Img should display
+And The bio_Emailfooter_Img should display
