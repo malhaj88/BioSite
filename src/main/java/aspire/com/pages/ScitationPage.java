@@ -24,7 +24,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+//import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -946,14 +946,14 @@ public class ScitationPage extends FluentWebDriverPage {
 		}
 	}
 
-	public void locateTit(String Actual) throws IOException {
-		WebDriver driver = new FirefoxDriver();
-		waitPresenceOfElement(Actual);
-		String sss = driver.findElement(By.cssSelector(Actual)).getText();
-		List<WebElement> links = findElements(By.cssSelector(EnvirommentManager.getInstance().getProperty(Actual)));
-		AuthorName = sss;
-		System.out.println(AuthorName);
-	}
+//	public void locateTit(String Actual) throws IOException {
+//		WebDriver driver = new FirefoxDriver();
+//		waitPresenceOfElement(Actual);
+//		String sss = driver.findElement(By.cssSelector(Actual)).getText();
+//		List<WebElement> links = findElements(By.cssSelector(EnvirommentManager.getInstance().getProperty(Actual)));
+//		AuthorName = sss;
+//		System.out.println(AuthorName);
+//	}
 
 	public void assertResultRandom(String Actual) throws IOException {
 

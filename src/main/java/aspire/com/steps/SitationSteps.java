@@ -137,12 +137,12 @@ public class SitationSteps extends BaseSteps {
 		getScitationPage().clickRandomElement(element);
 	}
 
-	@Given("I locate title $element")
-	@When("I locate title $element")
-	@Then("I locate title $element")
-	public void locateTit(@Named("element") String element) throws IOException, Exception {
-		getScitationPage().locateTit(element);
-	}
+//	@Given("I locate title $element")
+//	@When("I locate title $element")
+//	@Then("I locate title $element")
+//	public void locateTit(@Named("element") String element) throws IOException, Exception {
+//		getScitationPage().locateTit(element);
+//	}
 
 	@Given("I aclick random $element")
 	@When("I aclick random $element")
