@@ -50,6 +50,7 @@ public class LifecycleSteps {
 		try {
 
 			AspireReport.getInstance().setCurrentStoryStartDate();
+			pageFactory.getDriverProvider().initialize();
 			// do somthing
 		} catch (WebDriverException e) {
 			e.printStackTrace();
@@ -66,8 +67,8 @@ public class LifecycleSteps {
 	public void runAfterEachStory() {
 		try {
 			AspireReport.getInstance().setCurrentStoryEndDate();
-
-			AspireReport.getInstance().printEveryThing();
+			//pageFactory.getDriverProvider().end();
+			//AspireReport.getInstance().printEveryThing();
 		} catch (WebDriverException e) {
 			e.printStackTrace();
 		}
