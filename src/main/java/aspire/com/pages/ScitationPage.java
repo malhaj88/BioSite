@@ -74,7 +74,8 @@ public class ScitationPage extends FluentWebDriverPage {
 	public void GoFor(String ContentURLVariable) throws IOException {
 		String URL = EnvirommentManager.getInstance().getProperty(ContentURLVariable);
 		get(URL);
-		getDriverProvider().get().manage().window().setSize(new Dimension(1024, 768));
+		getDriverProvider().get().manage().window().setSize(new Dimension(768, 1024));
+		
 
 	}
 
