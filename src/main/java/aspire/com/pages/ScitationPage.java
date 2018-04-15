@@ -177,7 +177,7 @@ public class ScitationPage extends FluentWebDriverPage {
 
 	public boolean waitPresenceOfElement(String element) throws IOException {
 		boolean result = true;
-		WebDriverWait wait = new WebDriverWait(getDriverProvider().get(), 200);
+		WebDriverWait wait = new WebDriverWait(getDriverProvider().get(), 20);
 		try {
 			wait.until(ExpectedConditions
 					.presenceOfElementLocated(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))));
@@ -991,8 +991,6 @@ public class ScitationPage extends FluentWebDriverPage {
 		Assert.assertTrue(Message.toLowerCase().contains(AuthorName.toLowerCase()));
 	}
 
-	
-
 	public void assertNotResult(String Actual, String expected) throws IOException {
 
 		waitPresenceOfElement(Actual);
@@ -1001,4 +999,28 @@ public class ScitationPage extends FluentWebDriverPage {
 		Assert.assertFalse(Message.toLowerCase().contains(expected.toLowerCase()));
 
 	}
+
+	public void newsArticle(String element, String title) throws IOException {
+		try {
+			WaitDOMToBeReady();
+		} catch (Exception e) {
+
+		}
+		String Text1 = findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))).getText();
+		System.out.println(Text1 + " == " + title);
+		findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element)))
+				.click();
+		System.out.println("Test");
+		
+		try {
+			Thread.sleep(2000);
+			WaitDOMToBeReady();
+		} catch (Exception e) {
+
+		}
+		System.out.println(Text1 + " == " + title);
+		Assert.assertTrue(Text1.toLowerCase().contains(findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(title))).getText().toLowerCase()));
+
+	}
+
 }

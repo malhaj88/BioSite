@@ -1,6 +1,6 @@
 Meta:
 @production
-Scenario: TC-004 Verify clicking on "Contact" link.
+Scenario: TC-004 Verify The Aip Logo
  
 Given I am On aipPublishingPage
 When page URL should be https://publishing.aip.org/

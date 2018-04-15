@@ -173,6 +173,13 @@ public class SitationSteps extends BaseSteps {
 	}
 
 
+	@Given("User clicks on $news, and $article and it opens proberly")
+	@When("User clicks on $news, and $article and it opens proberly")
+	@Then("User clicks on $news, and $article and it opens proberly")
+	public void newsArticle(String element,String title) throws IOException {
+		getScitationPage().newsArticle(element,title);
+	}
+	
 	
 	@Given("pagination should display")
 	@When("pagination should display")
