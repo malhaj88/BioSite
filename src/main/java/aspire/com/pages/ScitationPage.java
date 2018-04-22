@@ -17,6 +17,7 @@ import org.apache.commons.lang.RandomStringUtils;
 import org.jbehave.web.selenium.FluentWebDriverPage;
 import org.jbehave.web.selenium.WebDriverProvider;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
@@ -73,8 +74,9 @@ public class ScitationPage extends FluentWebDriverPage {
 	public void GoFor(String ContentURLVariable) throws IOException {
 		String URL = EnvirommentManager.getInstance().getProperty(ContentURLVariable);
 		get(URL);
-		getDriverProvider().get().manage().window().maximize();
-
+		//getDriverProvider().get().manage().window().maximize();
+		getDriverProvider().get().manage().window().setSize(new
+				Dimension(1456, 876));
 	}
 
 	public void WaitDOMToBeReady() throws Exception {
