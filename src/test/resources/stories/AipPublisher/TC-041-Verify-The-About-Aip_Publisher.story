@@ -11,4 +11,5 @@ And The about_Glopal_Reach should be Global Reach and Outstanding Quality
 And The about_Fast_Publication should be Fast Publication Times
 And The about_Number_Reviewers should be Number of Peer Reviewers in 2016
 And I click on about_American_Institute
+And I switch tabs
 And page URL should be https://www.aip.org/

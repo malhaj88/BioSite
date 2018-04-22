@@ -1,6 +1,6 @@
 Meta:
 @production
-Scenario: TC-026 Verify the privacy policy footer section
+Scenario: TC-025 Verify the privacy policy footer section
 
 Given I am On aipPublishingPage
 When I click on aip_Footer_Privacypolicy

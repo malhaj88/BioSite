@@ -1,6 +1,6 @@
 Meta:
 @production
-Scenario: TC-047 Verify The About Publishing news
+Scenario: TC-048 Verify The About Publishing news
 
 Given I am On aipPublishingPage
 When The aip_About should be About

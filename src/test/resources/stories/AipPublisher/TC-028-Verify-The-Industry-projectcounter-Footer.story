@@ -1,6 +1,6 @@
 Meta:
 @production
-Scenario: TC-029 Verify the industry projectcounter link
+Scenario: TC-028 Verify the industry projectcounter link
 
 Given I am On aipPublishingPage
 When I click on aip_Industry_Projectcounter
