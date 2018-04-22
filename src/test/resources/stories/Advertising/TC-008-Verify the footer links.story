@@ -9,6 +9,7 @@ And The advertising_Page_Header should be Advertising
 And I click on adv_Footer_Audience
 And page URL should be https://advertising.aip.org/audience/
 And The advertising_Page_Header should be Audience
+And I scroll To adv_Footer_Advertising_Option
 And I click on adv_Footer_Advertising_Option
 And page URL should be https://advertising.aip.org/advertisingoptions/
 And The advertising_Page_Header should be Advertising Options
