@@ -97,7 +97,7 @@ public class StoriesTest extends JUnitStories {
 	@Override
 	protected List<String> storyPaths() {
 		return new StoryFinder().findPaths(codeLocationFromClass(this.getClass()).getFile(),
-				asList("**/" + System.getProperty("storyFilter", "TC-005-Verify-clicking-Print_Advertising_Home_Link") + ".story"),
+				asList("**/" + System.getProperty("storyFilter", "*") + ".story"),
 				//asList("**/" + System.getProperty("storyFilter", "TC-021-ClickOnFooterElements-FaceBook") + ".story"),
 				null);
 
