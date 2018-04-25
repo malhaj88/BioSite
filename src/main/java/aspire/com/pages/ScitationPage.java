@@ -271,7 +271,12 @@ public class ScitationPage extends FluentWebDriverPage {
 	public void clickOnAnElement(String element) throws IOException {
 
 		waitPresenceOfElement(element);
-
+        try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))).click();
 		try {
 			WaitDOMToBeReady();
@@ -650,8 +655,14 @@ public class ScitationPage extends FluentWebDriverPage {
 		waitPresenceOfElement(Actual);
 		String Message = findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(Actual))).getText();
 		System.out.println(Message + "---------" + expected);
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Assert.assertTrue(Message.toLowerCase().contains(expected.toLowerCase()));
-		Assert.assertTrue(Message.toLowerCase().contains(expected.toLowerCase()));
+
 	}
 
 	public void SwitchToIframe(String IframeSelector) throws IOException {
