@@ -1,6 +1,6 @@
 Meta:
 @production
-Scenario: TC-006 Verify clicking Custom Advertising & Sponsorship Opportunities from home link.
+Scenario:  TC-006 Verify clicking Custom Advertising & Sponsorship Opportunities from home link.
  
 Given I am On advertisingPage
 When I click on Custom_Sponsorship_Home_Link
