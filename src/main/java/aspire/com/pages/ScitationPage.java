@@ -589,7 +589,19 @@ public class ScitationPage extends FluentWebDriverPage {
 		WebDriver driver = getDriverProvider().get();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		browserTabs = new ArrayList<String>(getWindowHandles());
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		switchTo().window(browserTabs.get(1));
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		try {
 			WaitDOMToBeReady();
 		} catch (Exception e) {
