@@ -178,7 +178,7 @@ public class ScitationPage extends FluentWebDriverPage {
 
 	public boolean waitPresenceOfElement(String element) throws IOException {
 		boolean result = true;
-		WebDriverWait wait = new WebDriverWait(getDriverProvider().get(), 200);
+		WebDriverWait wait = new WebDriverWait(getDriverProvider().get(), 20);
 		try {
 			wait.until(ExpectedConditions
 					.presenceOfElementLocated(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))));
