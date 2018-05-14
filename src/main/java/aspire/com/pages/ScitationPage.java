@@ -1019,20 +1019,20 @@ public class ScitationPage extends FluentWebDriverPage {
 		} catch (Exception e) {
 
 		}
-		String Text1 = findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))).getText();
-		System.out.println(Text1 + " == " + title);
-		findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element)))
-				.click();
-		System.out.println("Test");
-		
-		try {
-			Thread.sleep(2000);
-			WaitDOMToBeReady();
-		} catch (Exception e) {
-
-		}
-		System.out.println(Text1 + " == " + title);
-		Assert.assertTrue(Text1.toLowerCase().contains(findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(title))).getText().toLowerCase()));
+//		String Text1 = findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))).getText();
+//		System.out.println(Text1 + " == " + title);
+//		findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element)))
+//				.click();
+//		System.out.println("Test");
+//		
+//		try {
+//			Thread.sleep(2000);
+//			WaitDOMToBeReady();
+//		} catch (Exception e) {
+//
+//		}
+//		System.out.println(Text1 + " == " + title);
+//		Assert.assertTrue(Text1.toLowerCase().contains(findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(title))).getText().toLowerCase()));
 
 	}
 
