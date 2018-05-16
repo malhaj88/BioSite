@@ -76,7 +76,7 @@ public class ScitationPage extends FluentWebDriverPage {
 		get(URL);
 		//getDriverProvider().get().manage().window().maximize();
 		getDriverProvider().get().manage().window().setSize(new
-				Dimension(1456, 876));
+				Dimension(1920, 1080));
 
 	}
 
