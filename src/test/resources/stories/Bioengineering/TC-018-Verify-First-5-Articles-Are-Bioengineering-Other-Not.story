@@ -4,6 +4,7 @@ Scenario: TC-018 Verify that First 5 articles are Bioengineering related article
 
 Given I am On bioengineerinPage
 When I Click On bio_Article
+And wait for sec
 Then The bio_Related_Articles_First should be Bioengineering Today
 And The bio_Related_Articles_Second should be Bioengineering Today
 And The bio_Related_Articles_Third should be Bioengineering Today
