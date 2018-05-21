@@ -49,7 +49,7 @@ public class Steps2 extends BaseSteps {
 //	}
 	@When("wait for sec")
 	public void sleep() throws InterruptedException {
-		Thread.sleep(25000);
+		Thread.sleep(50000);
 	}
 
 	@Given("I do nothing")
