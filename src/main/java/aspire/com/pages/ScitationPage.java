@@ -76,7 +76,7 @@ public class ScitationPage extends FluentWebDriverPage {
 		get(URL);
 		//getDriverProvider().get().manage().window().maximize();
 		getDriverProvider().get().manage().window().setSize(new
-				Dimension(1920, 1080));
+				Dimension(1456,876));
 
 	}
 
@@ -241,6 +241,9 @@ public class ScitationPage extends FluentWebDriverPage {
 	public void enterValueToTextBox(String element, String value) throws IOException {
 
 		waitPresenceOfElement(element);
+		WebDriver driver = getDriverProvider().get();
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
+				driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))));
 		if (value.equalsIgnoreCase("empty")) {
 			findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))).clear();
 		} else {
@@ -272,6 +275,9 @@ public class ScitationPage extends FluentWebDriverPage {
 	public void clickOnAnElement(String element) throws IOException {
 
 		waitPresenceOfElement(element);
+		WebDriver driver = getDriverProvider().get();
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
+				driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))));
         try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e1) {
@@ -547,6 +553,11 @@ public class ScitationPage extends FluentWebDriverPage {
 			e.printStackTrace();
 		}
 		waitPresenceOfElement(element);
+		WebDriver driver = getDriverProvider().get();
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
+				driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))));
+		
+		//waitPresenceOfElement(element);
 		findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))).isDisplayed();
 
 	}
@@ -666,6 +677,11 @@ public class ScitationPage extends FluentWebDriverPage {
 	public void assertResult(String Actual, String expected) throws IOException {
 
 		waitPresenceOfElement(Actual);
+		WebDriver driver = getDriverProvider().get();
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
+				driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(Actual))));
+		
+		//waitPresenceOfElement(Actual);
 		String Message = findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(Actual))).getText();
 		System.out.println(Message + "---------" + expected);
 		try {
@@ -675,7 +691,7 @@ public class ScitationPage extends FluentWebDriverPage {
 			e.printStackTrace();
 		}
 		Assert.assertTrue(Message.toLowerCase().contains(expected.toLowerCase()));
-		Assert.assertTrue(Message.toLowerCase().contains(expected.toLowerCase()));
+		//Assert.assertTrue(Message.toLowerCase().contains(expected.toLowerCase()));
 	}
 
 	public void SwitchToIframe(String IframeSelector) throws IOException {
