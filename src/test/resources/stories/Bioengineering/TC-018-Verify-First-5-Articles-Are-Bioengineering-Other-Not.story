@@ -3,7 +3,8 @@ Meta:
 Scenario: TC-018 Verify that First 5 articles are Bioengineering related articles, remaining from other areas.
 
 Given I am On bioengineerinPage
-When I Click On bio_Article
+When I Click On bio_More_Article_Button
+And I Click On bio_Article
 And wait for sec
 Then The bio_Related_Articles_First should be Bioengineering Today
 And The bio_Related_Articles_Second should be Bioengineering Today
