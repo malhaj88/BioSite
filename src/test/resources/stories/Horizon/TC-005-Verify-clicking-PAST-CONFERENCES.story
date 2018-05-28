@@ -3,7 +3,8 @@ Meta:
 Scenario: TC-005 Verify clicking PAST CONFERENCES link.
  
 Given I am On horizonsPage
-When I click on cookie
+When I Click On cookie
+And I Click On cookie
 When I hover over horizonPastConferences
 And I click on horizonPastConferences
 Then page URL should be horizons.aip.org/pastconferences/

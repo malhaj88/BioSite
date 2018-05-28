@@ -3,7 +3,8 @@ Meta:
 Scenario: TC-014 Verify Horizon footer links.
 
 Given I am On horizonsPage
-When I click on cookie
+When I Click On cookie
+And I Click On cookie
 When I click on  horizon_Footer_Home
 Then The horizonHomeTitle should display
 And I click on horizon_Footer_Upcoming_Conferences

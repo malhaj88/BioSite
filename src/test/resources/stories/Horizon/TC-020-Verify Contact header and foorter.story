@@ -3,7 +3,8 @@ Meta:
 Scenario: TC-020 Verify Scitation Contact header and footer
 
 Given I am On horizonsPage
-When I click on cookie
+When I Click On cookie
+And I Click On cookie
 When I hover over horizonContact
 And I click on horizonContact
 Then The AUTHOR should display
