@@ -5,6 +5,7 @@ Scenario: TC-013 Verify Horizon footer section.
 Given I am On horizonsPage
 When I Click On cookie
 And I Click On cookie
+And I scroll to 1000
 When The horizon_Footer_Home should be HOME
 Then The horizon_Footer_Upcoming_Conferences should be UPCOMING CONFERENCES
 And The horizon_Footer_Past_Conferences should be PAST CONFERENCES

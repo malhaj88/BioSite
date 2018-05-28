@@ -9,6 +9,7 @@ When I hover over horizonContact
 And I click on horizonContact
 And I click on contact_Radio_Button
 And I Fill Automation to : contact_Name
+And I scroll to 500
 And I Fill Automation@test.com to : contact_Email
 And I Fill 123 to : contact_AccountNumber
 And I click on contact_Journal

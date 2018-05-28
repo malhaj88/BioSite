@@ -7,6 +7,7 @@ When I Click On cookie
 And I Click On cookie
 When I hover over horizonContact
 And I click on horizonContact
+And I scroll to 1000
 Then The AUTHOR should display
 And The LIBRARIAN should display
 And The ADVERTISER should display
