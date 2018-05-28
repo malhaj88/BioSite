@@ -24,7 +24,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+//import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -74,10 +74,12 @@ public class ScitationPage extends FluentWebDriverPage {
 	public void GoFor(String ContentURLVariable) throws IOException {
 		String URL = EnvirommentManager.getInstance().getProperty(ContentURLVariable);
 		get(URL);
-		//getDriverProvider().get().manage().window().maximize();
-		getDriverProvider().get().manage().window().setSize(new
-				Dimension(1456, 876));
-
+		getDriverProvider().get().manage().window().setSize(new Dimension(1552, 840));
+        waitPresenceOfElement("cookie");
+        WebDriver driver = getDriverProvider().get();
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
+				driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty("cookie"))));
+        clickOnAnElement("cookie");
 	}
 
 	public void WaitDOMToBeReady() throws Exception {
@@ -180,7 +182,7 @@ public class ScitationPage extends FluentWebDriverPage {
 
 	public boolean waitPresenceOfElement(String element) throws IOException {
 		boolean result = true;
-		WebDriverWait wait = new WebDriverWait(getDriverProvider().get(), 20);
+		WebDriverWait wait = new WebDriverWait(getDriverProvider().get(), 30);
 		try {
 			wait.until(ExpectedConditions
 					.presenceOfElementLocated(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))));
@@ -272,12 +274,10 @@ public class ScitationPage extends FluentWebDriverPage {
 	public void clickOnAnElement(String element) throws IOException {
 
 		waitPresenceOfElement(element);
-        try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+		WebDriver driver = getDriverProvider().get();
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
+				driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))));
+
 		findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))).click();
 		try {
 			WaitDOMToBeReady();
@@ -332,9 +332,19 @@ public class ScitationPage extends FluentWebDriverPage {
 
 	public void clickOnElementUsingJS(String element) throws IOException {
 		WebDriver driver = getDriverProvider().get();
-		element = EnvirommentManager.getInstance().getProperty(element);
-		JavascriptExecutor executor = (JavascriptExecutor) driver;
-		executor.executeScript("$('" + element + "').click();");
+		try {
+			WaitDOMToBeReady();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		waitPresenceOfElement(element);
+		
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
+				driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))));
+		WebElement element1 = findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element)));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(element1).click().build().perform();
 	}
 
 	public void waitElementToDisappear(String element) throws IOException {
@@ -547,6 +557,9 @@ public class ScitationPage extends FluentWebDriverPage {
 			e.printStackTrace();
 		}
 		waitPresenceOfElement(element);
+		WebDriver driver = getDriverProvider().get();
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
+				driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))));
 		findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))).isDisplayed();
 
 	}
@@ -589,19 +602,7 @@ public class ScitationPage extends FluentWebDriverPage {
 		WebDriver driver = getDriverProvider().get();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		browserTabs = new ArrayList<String>(getWindowHandles());
-		try {
-			Thread.sleep(4000);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
 		switchTo().window(browserTabs.get(1));
-		try {
-			Thread.sleep(4000);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
 		try {
 			WaitDOMToBeReady();
 		} catch (Exception e) {
@@ -666,16 +667,13 @@ public class ScitationPage extends FluentWebDriverPage {
 	public void assertResult(String Actual, String expected) throws IOException {
 
 		waitPresenceOfElement(Actual);
+		WebDriver driver = getDriverProvider().get();
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
+				driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(Actual))));
 		String Message = findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(Actual))).getText();
 		System.out.println(Message + "---------" + expected);
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		Assert.assertTrue(Message.toLowerCase().contains(expected.toLowerCase()));
-		Assert.assertTrue(Message.toLowerCase().contains(expected.toLowerCase()));
+		
 	}
 
 	public void SwitchToIframe(String IframeSelector) throws IOException {
@@ -967,14 +965,14 @@ public class ScitationPage extends FluentWebDriverPage {
 		}
 	}
 
-	public void locateTit(String Actual) throws IOException {
-		WebDriver driver = new FirefoxDriver();
-		waitPresenceOfElement(Actual);
-		String sss = driver.findElement(By.cssSelector(Actual)).getText();
-		List<WebElement> links = findElements(By.cssSelector(EnvirommentManager.getInstance().getProperty(Actual)));
-		AuthorName = sss;
-		System.out.println(AuthorName);
-	}
+//	public void locateTit(String Actual) throws IOException {
+//		WebDriver driver = new FirefoxDriver();
+//		waitPresenceOfElement(Actual);
+//		String sss = driver.findElement(By.cssSelector(Actual)).getText();
+//		List<WebElement> links = findElements(By.cssSelector(EnvirommentManager.getInstance().getProperty(Actual)));
+//		AuthorName = sss;
+//		System.out.println(AuthorName);
+//	}
 
 	public void assertResultRandom(String Actual) throws IOException {
 
