@@ -75,11 +75,11 @@ public class ScitationPage extends FluentWebDriverPage {
 		String URL = EnvirommentManager.getInstance().getProperty(ContentURLVariable);
 		get(URL);
 		getDriverProvider().get().manage().window().setSize(new Dimension(1552, 840));
-        waitPresenceOfElement("cookie");
-        WebDriver driver = getDriverProvider().get();
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
-				driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty("cookie"))));
-        clickOnAnElement("cookie");
+//        waitPresenceOfElement("cookie");
+//        WebDriver driver = getDriverProvider().get();
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
+//				driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty("cookie"))));
+//        clickOnAnElement("cookie");
 	}
 
 	public void WaitDOMToBeReady() throws Exception {
