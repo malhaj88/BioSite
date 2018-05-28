@@ -274,9 +274,9 @@ public class ScitationPage extends FluentWebDriverPage {
 	public void clickOnAnElement(String element) throws IOException {
 
 		waitPresenceOfElement(element);
-		WebDriver driver = getDriverProvider().get();
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
-				driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))));
+//		WebDriver driver = getDriverProvider().get();
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
+//				driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))));
 
 		findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))).click();
 		try {
@@ -557,9 +557,9 @@ public class ScitationPage extends FluentWebDriverPage {
 			e.printStackTrace();
 		}
 		waitPresenceOfElement(element);
-		WebDriver driver = getDriverProvider().get();
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
-				driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))));
+//		WebDriver driver = getDriverProvider().get();
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
+//				driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))));
 		findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))).isDisplayed();
 
 	}
