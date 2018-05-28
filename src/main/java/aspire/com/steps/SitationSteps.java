@@ -6,6 +6,8 @@ import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 
 import aspire.com.pages.PageFactory;
 
@@ -209,6 +211,13 @@ public class SitationSteps extends BaseSteps {
 	@Then("I scroll To $element")
 	public void scrollToElement(@Named("element") String element) throws IOException {
 		getScitationPage().scrollToElement(element);
+	}
+
+	@Given("I scroll to $element")
+	@When("I scroll to $element")
+	@Then("I scroll to $element")
+	public void scrolltoElement(@Named("element") int element) throws IOException {
+		getScitationPage().scrolltoElement(element);
 	}
 
 	@Then("I check Clicking On $elemnt lead to the appropriate pages")

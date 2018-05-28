@@ -74,12 +74,12 @@ public class ScitationPage extends FluentWebDriverPage {
 	public void GoFor(String ContentURLVariable) throws IOException {
 		String URL = EnvirommentManager.getInstance().getProperty(ContentURLVariable);
 		get(URL);
-		getDriverProvider().get().manage().window().maximize();
-//        waitPresenceOfElement("cookie");
-//        WebDriver driver = getDriverProvider().get();
-//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
-//				driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty("cookie"))));
-//        clickOnAnElement("cookie");
+		getDriverProvider().get().manage().window().setSize(new Dimension(1456, 876));
+		// waitPresenceOfElement("cookie");
+		// WebDriver driver = getDriverProvider().get();
+		// ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
+		// driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty("cookie"))));
+		// clickOnAnElement("cookie");
 	}
 
 	public void WaitDOMToBeReady() throws Exception {
@@ -142,8 +142,31 @@ public class ScitationPage extends FluentWebDriverPage {
 	public void scrollToElement(String element) throws IOException {
 		waitPresenceOfElement(element);
 		WebDriver driver = getDriverProvider().get();
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(false);",
 				driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))));
+		Actions actions = new Actions(driver);
+		// ((JavascriptExecutor)
+		// driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public void scrolltoElement(int element) throws IOException {
+		// waitPresenceOfElement(element);
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		WebDriver driver = getDriverProvider().get();
+
+		((JavascriptExecutor) driver).executeScript(("window.scrollBy(0," + element + ")"));
+
 	}
 
 	public void scrollToElementAndStop(String element) throws IOException {
@@ -274,9 +297,9 @@ public class ScitationPage extends FluentWebDriverPage {
 	public void clickOnAnElement(String element) throws IOException {
 
 		waitPresenceOfElement(element);
-//		WebDriver driver = getDriverProvider().get();
-//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
-//				driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))));
+		// WebDriver driver = getDriverProvider().get();
+		// ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
+		// driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))));
 
 		findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))).click();
 		try {
@@ -339,7 +362,7 @@ public class ScitationPage extends FluentWebDriverPage {
 			e.printStackTrace();
 		}
 		waitPresenceOfElement(element);
-		
+
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
 				driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))));
 		WebElement element1 = findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element)));
@@ -557,9 +580,9 @@ public class ScitationPage extends FluentWebDriverPage {
 			e.printStackTrace();
 		}
 		waitPresenceOfElement(element);
-//		WebDriver driver = getDriverProvider().get();
-//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
-//				driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))));
+		// WebDriver driver = getDriverProvider().get();
+		// ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
+		// driver.findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))));
 		findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(element))).isDisplayed();
 
 	}
@@ -673,7 +696,7 @@ public class ScitationPage extends FluentWebDriverPage {
 		String Message = findElement(By.cssSelector(EnvirommentManager.getInstance().getProperty(Actual))).getText();
 		System.out.println(Message + "---------" + expected);
 		Assert.assertTrue(Message.toLowerCase().contains(expected.toLowerCase()));
-		
+
 	}
 
 	public void SwitchToIframe(String IframeSelector) throws IOException {
@@ -965,14 +988,15 @@ public class ScitationPage extends FluentWebDriverPage {
 		}
 	}
 
-//	public void locateTit(String Actual) throws IOException {
-//		WebDriver driver = new FirefoxDriver();
-//		waitPresenceOfElement(Actual);
-//		String sss = driver.findElement(By.cssSelector(Actual)).getText();
-//		List<WebElement> links = findElements(By.cssSelector(EnvirommentManager.getInstance().getProperty(Actual)));
-//		AuthorName = sss;
-//		System.out.println(AuthorName);
-//	}
+	// public void locateTit(String Actual) throws IOException {
+	// WebDriver driver = new FirefoxDriver();
+	// waitPresenceOfElement(Actual);
+	// String sss = driver.findElement(By.cssSelector(Actual)).getText();
+	// List<WebElement> links =
+	// findElements(By.cssSelector(EnvirommentManager.getInstance().getProperty(Actual)));
+	// AuthorName = sss;
+	// System.out.println(AuthorName);
+	// }
 
 	public void assertResultRandom(String Actual) throws IOException {
 
