@@ -3,6 +3,7 @@ Meta:
 Scenario: TC-004 Verify clicking UPCOMING CONFERENCES.
  
 Given I am On horizonsPage
+When I click on cookie
 When I hover over horizonUpcoming
 And I click on horizonUpcoming
 Then page URL should be horizons.aip.org

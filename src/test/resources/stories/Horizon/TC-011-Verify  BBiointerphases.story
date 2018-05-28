@@ -3,6 +3,7 @@ Meta:
 Scenario: TC-011 Verify the bioInterPhases links.
 
 Given I am On horizonsPage
+When I click on cookie
 When I click on bioInterPhases
 And I switch tabs
 Then page URL should be avs.scitation.org/journal/bip

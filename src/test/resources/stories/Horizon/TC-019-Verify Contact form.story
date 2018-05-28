@@ -3,6 +3,7 @@ Meta:
 Scenario: TC-019 Verify Scitation Contact form
 
 Given I am On horizonsPage
+When I click on cookie
 When I hover over horizonContact
 And I click on horizonContact
 And I click on contact_Radio_Button

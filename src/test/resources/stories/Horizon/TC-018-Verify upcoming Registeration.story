@@ -3,6 +3,7 @@ Meta:
 Scenario: TC-018 Verify Upcoming Conferences Registration.
 
 Given I am On horizonsPage
+When I click on cookie
 When I click on targeted_Nucleic_Acid
 And I switch tabs
 Then The conference_Registration should display
